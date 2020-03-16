@@ -38,14 +38,9 @@ function open() {
 	xdg-open "$1" 2> /dev/null
 }
 
-alias flutter='flutter-exec'
 alias grep='grep --color=auto'
+alias ls='ls --color=auto'
 alias v='nvim'
 alias q=exit
-alias cd..='cd ..'
-alias ls='ls --color=auto'
-alias lime='haxelib run lime'
-alias hxpunk='haxelib run HaxePunk'
-alias flixel='haxelib run flixel-tools'
 alias crystal="dotnet $HOME/Projects/Crystal.Engine/Crystal.Engine/bin/Debug/netcoreapp3.0/Crystal.Engine.dll"
 alias gocd="mkcd $GOPATH/src/github.com/PietroCarrara"
