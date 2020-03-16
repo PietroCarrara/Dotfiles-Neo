@@ -16,6 +16,9 @@ compinit
 PROMPT='%(?.%F{magenta}.%F{red})λ%f '
 RPROMPT='%B%F{cyan}%~%f%b'
 
+# Auto rehash
+zstyle ':completion:*' rehash true
+
 export EDITOR="nvim"
 export GOPATH="$HOME/go"
 
