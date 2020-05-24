@@ -47,3 +47,4 @@ alias v='nvim'
 alias q=exit
 alias crystal="dotnet $HOME/Projects/Crystal.Engine/Crystal.Engine/bin/Debug/netcoreapp3.0/Crystal.Engine.dll"
 alias gocd="mkcd $GOPATH/src/github.com/PietroCarrara"
+alias alarm='ssh alarm@192.168.0.105'
