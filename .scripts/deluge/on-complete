@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Load variables
+. $HOME/.env
+
+# Deluge arguments
+id=$1
+name=$2
+dest=$3
+
+# Folder where the torrent will be downloaded (file or folder)
+target=$dest/$name
+
+# Add subtitles
+subliminal --legendastv $LEGENDASTV_USR $LEGENDASTV_PWD --opensubtitles $OPENSUBTITLES_USR $OPENSUBTITLES_PWD download -l pt-BR "$target"
