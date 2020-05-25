@@ -8,8 +8,11 @@ id=$1
 name=$2
 dest=$3
 
-# Folder where the torrent will be downloaded (file or folder)
+# Path where the torrent will be downloaded (file or folder)
 target=$dest/$name
 
 # Add subtitles
 subliminal --legendastv $LEGENDASTV_USR $LEGENDASTV_PWD --opensubtitles $OPENSUBTITLES_USR $OPENSUBTITLES_PWD download -l pt-BR "$target"
+
+# Notify Kodi of new videos
+curl --data-binary '{ "jsonrpc": "2.0", "method": "VideoLibrary.Scan", "id": "deluge-finished"}' -H 'content-type: application/json;' 'http://192.168.0.105:8080/jsonrpc'
