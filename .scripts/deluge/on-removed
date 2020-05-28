@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Deluge arguments
+id=$1
+name=$2
+dest=$3
+
+# Path where the torrent will be downloaded (file or folder)
+target=$dest/$name
+
+# Remove leftover subtitles
+find "$target" -type f -name '*.srt' -delete
+
+# If the dir is empty, remove it
+rmdir "$target"
+
+# Notify Kodi to remove videos
+curl --data-binary '{ "jsonrpc": "2.0", "method": "VideoLibrary.Clean", "id": "deluge-finished"}' -H 'content-type: application/json;' 'http://192.168.0.105:8080/jsonrpc'
