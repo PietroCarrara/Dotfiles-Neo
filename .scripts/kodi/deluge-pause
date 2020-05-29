@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $1 == 'play' ]]; then
+	deluge-console pause '*'
+else
+	deluge-console resume '*'
+fi

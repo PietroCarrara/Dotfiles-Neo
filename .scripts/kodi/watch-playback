@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Watches Kodi's player state, and executes the provided command
+# when the state changes, passing the current state as an argument
+#
+# Usage: watch-playback echo 'the player state is:'
+#  > the player state is: play
+#  > the player state is: stop
+
+ADDR=192.168.0.105:8080 # Kodi server address
+INTERVAL=2 				# 2 secs between each check
+
+player-id() {
+	curl --data-binary '{ "jsonrpc": "2.0", "method": "Player.GetActivePlayers", "id": "watch-playback"}' \
+	-H 'content-type: application/json;' "http://$ADDR/jsonrpc" -s | jq '.result | .[] | .playerid'
+}
+
+is-playing() {
+	[[ ! -z $(player-id) ]] && echo play || echo stop
+}
+
+state=$(is-playing)
+
+"$@" "$(is-playing)"
+
+while true; do
+	sleep $INTERVAL
+
+	tmp=$(is-playing)
+
+	if [[ "$tmp" != "$state" ]]; then
+		state=$tmp
+
+		"$@" "$state"
+	fi
+done
