@@ -8,7 +8,6 @@
 #  > the player state is: stop
 
 ADDR=192.168.0.105:8080 # Kodi server address
-INTERVAL=2 				# 2 secs between each check
 
 player-id() {
 	curl --data-binary '{ "jsonrpc": "2.0", "method": "Player.GetActivePlayers", "id": "watch-playback"}' \
@@ -24,13 +23,17 @@ state=$(is-playing)
 "$@" "$(is-playing)"
 
 while true; do
-	sleep $INTERVAL
-
 	tmp=$(is-playing)
 
 	if [[ "$tmp" != "$state" ]]; then
 		state=$tmp
 
 		"$@" "$state"
+
+		if [[ "$state" == play ]]; then
+			sleep 180 # 3 mins before checking again
+		else 
+			sleep 2
+		fi
 	fi
 done
