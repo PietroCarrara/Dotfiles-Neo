@@ -51,4 +51,5 @@ alias q=exit
 alias crystal="dotnet $HOME/Projects/Crystal.Engine/Crystal.Engine/bin/Debug/netcoreapp3.0/Crystal.Engine.dll"
 alias gocd="mkcd $GOPATH/src/github.com/PietroCarrara"
 alias alarm='ssh alarm@192.168.0.105'
+alias sendai='ssh pietro@192.168.0.101'
 alias subliminal="subliminal --legendastv $LEGENDASTV_USR $LEGENDASTV_PWD --opensubtitles $OPENSUBTITLES_USR $OPENSUBTITLES_PWD"
