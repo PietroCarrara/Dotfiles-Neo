@@ -1,0 +1,8 @@
+<advancedsettings version="1.0">
+
+	<tvshowmatching action="append">
+		<!-- As a last resource, try finding a number -->
+		<regexp>[\._ \-]([0-9]+)</regexp>
+	</tvshowmatching>
+
+</advancedsettings>
