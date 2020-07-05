@@ -5,4 +5,12 @@
 		<regexp>[\._ \-]([0-9]+)</regexp>
 	</tvshowmatching>
 
+	<videolibrary>
+		<cleanonupdate>true</cleanonupdate>
+	</videolibrary>
+
+	<videoscanner>
+		<ignoreerrors>true</ignoreerrors>
+	</videoscanner>
+
 </advancedsettings>
