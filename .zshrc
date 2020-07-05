@@ -53,3 +53,4 @@ alias gocd="mkcd $GOPATH/src/github.com/PietroCarrara"
 alias alarm='ssh alarm@192.168.0.105'
 alias sendai='ssh pietro@192.168.0.101'
 alias subliminal="subliminal --legendastv $LEGENDASTV_USR $LEGENDASTV_PWD --opensubtitles $OPENSUBTITLES_USR $OPENSUBTITLES_PWD"
+alias venv='. venv/bin/activate'
