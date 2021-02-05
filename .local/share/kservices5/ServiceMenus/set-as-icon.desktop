@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=image/*;
+Actions=setAsDirIcon;
+X-KDE-AuthorizeAction=shell_access
+
+[Desktop Action setAsDirIcon]
+TryExec=$HOME/.scripts/util/set-as-dir-icon.sh
+Exec=$HOME/.scripts/util/set-as-dir-icon.sh %f
+Icon=accessories-image-viewer
+
+Name=Set As Icon
+Name[pt_BR]=Definir Como Ícone
+
+Comment=Set image as folder icon
+Comment[pt_BR]=Definir imagem como ícone da pasta
+
+
