@@ -9,5 +9,10 @@ if [[ ! "$file" = /* ]]; then
 	file=$PWD/$file
 fi
 
+if [[ ! -f "$file" ]]; then
+	echo "error: icon must exist and be a file"
+	exit 1
+fi
+
 echo -e "[Desktop Entry]\nIcon=$file" > .directory
 
