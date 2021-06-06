@@ -22,6 +22,8 @@ for video in sys.argv[1:]:
         elif video == '--verbose':
             verbose = True
 
+        continue
+
     # As soon as we find a video, we don't expect to find any other flag
     doneProcessingFlags = True
 
@@ -35,6 +37,7 @@ for video in sys.argv[1:]:
     if (len(subs) < 2):
         if verbose:
             print(f'warn: skipping {video}: not enough subtitles found')
+            continue
 
     subs = sorted(subs, key=lambda x: os.path.getmtime(x))
 
